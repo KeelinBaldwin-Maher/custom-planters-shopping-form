@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <script src="a2-JavaScript.js"></script>
+    <link rel="stylesheet" href="a2-Style.css">
+    <title>Assignment 2</title>
+</head>
+
+<h2 class="formTitle">
+    Flat Bottomed Cylinder Planter
+</h2>
+
+<div id="shopImgs">
+    <div id="shopSelectionImgs">
+        <img class="shopImgs"
+            src="photos/cylinder/empty_flat-bottom-cylinder_zen-large-white-planter_crate-and-barrel.jpg"
+            alt="empty flat bottomed cylinder planter" onclick="changeImg(this.src)">
+        <br>
+        <img class="shopImgs" src="photos/cylinder/flat-bottomed-cylinder_ZenPlanterLgWhite_crate-and-barrel.jpg"
+            alt="flat bottomed cylinder planter" onclick="changeImg(this.src)">
+        <br>
+        <img class="shopImgs" src="photos/cylinder/flat-bottom-collection_crate-and-barrel.jpg"
+            alt="collection of flat bottomed cylinder planters" onclick="changeImg(this.src)">
+        <br>
+        <img class="shopImgs" src="photos/cylinder/flat-bottomed-cylinder_zenplanters_crate-and-barrel.jpg"
+            alt="collection of flat bottomed cylinder planters" onclick="changeImg(this.src)">
+    </div>
+    <div id="mainShopImgDiv">
+        <img id="mainShopImg"
+            src="photos/cylinder/empty_flat-bottom-cylinder_zen-large-white-planter_crate-and-barrel.jpg"
+            alt="empty rectangular planter">
+    </div>
+</div>
+
+<div id="dimensionsList">
+    <h3 class="formHeader1">
+        Dimensions
+    </h3>
+    <ul>
+        <li>
+            <label for="cylinderRadius">
+                Radius
+            </label>
+            <br>
+            <input onchange="calculateVolume('cylinder')" id="cylinderRadius" name="Radius" type="number" min="1"
+                value="1"> cm
+        </li>
+        <li>
+            <label for="cylinderHeight">
+                Height
+            </label>
+            <br>
+            <input onchange="calculateVolume('cylinder')" id="cylinderHeight" name="width" type="number" min="1"
+                value="1"> cm
+        </li>
+        <li>
+            <span class="formHeader2">
+                &emsp; Volume
+            </span>
+            <br>
+            <span id="volumeResult">
+                &emsp; 0 cm&sup3;
+            </span>
+        </li>
+    </ul>
+</div>
+
+</html>

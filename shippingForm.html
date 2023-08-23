@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <script src="a2-JavaScript.js"></script>
+    <link rel="stylesheet" href="a2-Style.css">
+    <title>Assignment 2</title>
+</head>
+
+<h1 class="sectionTitle">Customer Information</h1>
+
+<form id="customerInfoForm" onsubmit="invoice(); return false">
+
+    <h3 class="formHeader1">Full Name</h3>
+    <ul class="formList">
+        <li id="firstNameListItem">
+            <input id="firstNameInput" name="firstName" type="text" placeholder="Jane" pattern="^[A-Za-z -]+$" autofocus
+                required>
+            <br>
+            <label id="firstNameLabel" for="firstNameInput">First name</label>
+        </li>
+        <li id="lastNameListItem">
+            <input id="lastNameInput" name="lastName" type="text" placeholder="Doe" pattern="^[A-Za-z -]+$" required>
+            <br>
+            <label id="lastNameLabel" for="lastNameInput">Last name</label>
+        </li>
+    </ul>
+
+    <h3 class="formHeader1">Shipping Address</h3>
+    <ul class="formList">
+        <li id="addressListItem">
+            <input id="addressInput" name="address" type="text" placeholder="123 Fake St. NW" required>
+            <br>
+            <label id="addressLabel" for="addressInput">Street address</label>
+        </li>
+        <li id="cityListItem">
+            <input id="cityInput" name="city" type="text" placeholder="Calgary" required>
+            <br>
+            <label id="cityLabel" for="cityInput">City</label>
+        </li>
+        <li id="provinceListItem">
+            <select id="provinceInput" name="province">
+                <option value="NL">NL</option>
+                <option value="PE">PE</option>
+                <option value="NS">NS</option>
+                <option value="NB">NB</option>
+                <option value="QC">QC</option>
+                <option value="ON">ON</option>
+                <option value="MB">MB</option>
+                <option value="SK">SK</option>
+                <option value="AB">AB</option>
+                <option value="BC">BC</option>
+                <option value="YT">YT</option>
+                <option value="NT">NT</option>
+                <option value="NU">NU</option>
+            </select>
+            <br>
+            <label id="provinceLabel" for="provinceInput">
+                Province
+            </label>
+        </li>
+        <li id="postalCodeListItem">
+            <input id="postalCodeInput" name="postalCode" type="text" placeholder="A1A1A1"
+                pattern="(?![DFIOQU])((?![WZ])[A-Z])[0-9][A-Z][0-9][A-Z][0-9]" required>
+            <br>
+            <label id="postalCodeLabel" for="postalCodeInput">Postal code</label>
+        </li>
+    </ul>
+
+    <h3 class="formHeader1">Contact Information</h3>
+    <ul class="formList">
+        <li id="phoneListItem">
+            <input id="phoneInput" name="phone" type="tel" placeholder="123-456-7890"
+                pattern="[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}" required>
+            <br>
+            <label id="phoneLabel" for="phoneInput">Phone </label>
+        </li>
+        <li id="emailListItem">
+            <input id="emailInput" name="email" type="email" placeholder="example.name@example.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}" required>
+            <br>
+            <label id="emailLabel" for="emailInput">E-mail</label>
+        </li>
+
+    </ul>
+
+    <input id="submitShipping" class="button" name="submit" type="submit" value="Submit">
+    <br>
+    <a id="linkToInvoice" class="innerLink" href="#invoiceDisplay">Go to invoice</a>
+
+</form>
+
+</html>

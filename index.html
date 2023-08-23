@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <script src="a2-JavaScript.js"></script>
+    <link rel="stylesheet" href="a2-Style.css">
+    <title>Assignment 2</title>
+</head>
+
+<body>
+    <header>
+        <div id="title">
+            <h1>Sunnyside <img id="logo" src="photos/logo-02.png" alt="Sunnyside Landscaping logo"> Landscaping</h1>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="sectionTitle">Custom Planters</h1>
+        <div id="shop">
+            <h3 class="formHeader1">
+                Select planter shape
+            </h3>
+            <ul id="shapeSelection">
+                <li>
+                    <button id="rectangularPlanter.html" class="active" onclick="planterPage(this.id)">
+                        <img class="shapeNavImg" id="rectangularPlanterImg"
+                            src="photos/rectangular/rectangular-planters_crate-and-barrel.jpg"
+                            alt="rectangular planters">
+                        Rectangular
+                    </button>
+                </li>
+                <li>
+                    <button id="flatBottomedCylinder.html" onclick="planterPage(this.id)">
+                        <img class="shapeNavImg" id="flatBottomedCylinderImg"
+                            src="photos/cylinder/flat-bottomed-cylinders-zen-planters-crate-and-barrel.jpg"
+                            alt="flat bottomed cylinder planters">
+                        Flat Bottomed Cylinder
+                    </button>
+                </li>
+                <li>
+                    <button id="halfSphere.html" onclick="planterPage(this.id)">
+                        <img class="shapeNavImg" id="halfSphereImg"
+                            src="photos/sphere/half-shpere-SeminyakGreyPlanter-crate-and-barrel.jpg"
+                            alt="half sphere planters">
+                        Half Sphere
+                    </button>
+                </li>
+                <li>
+                    <button id="truncatedCone.html" onclick="planterPage(this.id)">
+                        <img class="shapeNavImg" id="truncatedConeImg"
+                            src="photos/cone/black-truncated-cone_shore-polyterrazo-black-planters_crate-and-barrel.jpg"
+                            alt="truncated cone planters">
+                        Truncated Cone
+                    </button>
+                </li>
+            </ul>
+
+            <div id="planters">
+                <div id="planterDetails">
+                    <h2 class="formTitle">
+                        Rectangular Planter
+                    </h2>
+
+                    <div id="shopImgs">
+                        <div id="shopSelectionImgs">
+                            <img class="shopImgs"
+                                src="photos/rectangular/rectangular-planters_empty_crate-and-barrel.jpg"
+                                alt="empty rectangular planter" onclick="changeImg(this.src)">
+                            <br>
+                            <img class="shopImgs"
+                                src="photos/rectangular/black-rectangular-planters-crate-and-barrel.jpg"
+                                alt="black rectangular planters" onclick="changeImg(this.src)">
+                            <br>
+                            <img class="shopImgs"
+                                src="photos/rectangular/rectangular-planter_bloxhi-glosswhiteplanters_crate-and-barrel.jpg"
+                                alt="collection of rectangular planters" onclick="changeImg(this.src)">
+                            <br>
+                            <img class="shopImgs"
+                                src="photos/rectangular/rectangular-planter_white-collection_crate-and-barrel.jpg"
+                                alt="collection of rectangular planters" onclick="changeImg(this.src)">
+                        </div>
+                        <div id="mainShopImgDiv">
+                            <img id="mainShopImg"
+                                src="photos/rectangular/rectangular-planters_empty_crate-and-barrel.jpg"
+                                alt="empty rectangular planter">
+                        </div>
+                    </div>
+
+                    <div id="dimensionsList">
+                        <h3 class="formHeader1">
+                            Dimensions
+                        </h3>
+                        <ul>
+                            <li>
+                                <label for="rectangularLength">
+                                    Length
+                                </label>
+                                <br>
+                                <input onchange="calculateVolume('rectangle')" id="rectangularLength" name="length"
+                                    type="number" min="1" value="1"> cm
+                            </li>
+                            <li>
+                                <label for="rectangularWidth">
+                                    Width
+                                </label>
+                                <br>
+                                <input onchange="calculateVolume('rectangle')" id="rectangularWidth" name="width"
+                                    type="number" min="1" value="1"> cm
+                            </li>
+                            <li>
+                                <label for="rectangularHeight">
+                                    Height
+                                </label>
+                                <br>
+                                <input onchange="calculateVolume('rectangle')" id="rectangularHeight" name="height"
+                                    type="number" min="1" value="1"> cm
+                            </li>
+                            <li>
+                                <span class="formHeader2">
+                                    &emsp; Volume
+                                </span>
+                                <br>
+                                <span id="volumeResult">
+                                    &emsp; 0 cm&sup3;
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="planterCostDiv">
+                    <h4 class="formHeader2">
+                        Cost
+                    </h4>
+                    <span id="planterCostSpan">
+                        $0.00
+                    </span>
+                    <br>
+                    <button id="addToCart" class="button" onclick="addToCart()">
+                        Add to Cart
+                    </button>
+                </div>
+
+            </div>
+
+            <div id="shoppingCart">
+                <h2 class="formHeader1">
+                    Shopping Cart
+                </h2>
+                <ul id="items">
+                    <li>
+
+                    </li>
+                </ul>
+
+                <div id="shoppingCartTotal">
+                    <h4 class="formHeader2">
+                        Total
+                    </h4>
+                    <p id="total">
+                        $0.00
+                    </p>
+
+                    <br>
+
+                    <button id="delete" class="disabled button" onclick="deleteCartItem()" type="button"
+                        disabled>Delete</button>
+                    <button id="checkOut" class="button" onclick="shippingInfo()" type="button">Checkout</button>
+
+                    <br>
+                    <br>
+
+                    <a id="shippingFormLink" class="innerLink" href="#shippingInfo">Go to shipping form</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="shippingInfo"></div>
+
+        <div id="invoiceDisplay">
+            <h1 class="sectionTitle">Invoice</h1>
+            <div id="invoiceCustomerInfo">
+                <h4 class="formHeader2">Name Lastname</h4>
+                123 Address SW
+                <br>
+                Cityname AB
+                <br>
+                A1A1A1
+            </div>
+            <br>
+            <h3 class="formHeader1">
+                Order Details
+            </h3>
+            <ul id="invoiceOrderItems">
+                <li style="float: left; width: 30%;">
+                    <b>list item</b>
+                </li>
+                <li style="float: left; width: 30%;">
+                    $Price
+                </li>
+                <li style="float: left; width: 100%; padding-left: 1rem;">
+                    Dimensions:
+                </li>
+                <li style="float: left; width: 100%; padding-left: 2.5rem;">
+                    Length
+                    <br>
+                    width
+                    <br>
+                    height
+                </li>
+            </ul>
+            <div id="invoiceTotalDiv">
+                <h3>
+                    Total
+                </h3>
+                <p id="invoiceTotal">
+                    $Invoice total
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+       <div id="companyContactInfo">
+           <h4 class="formHeader2">
+               Sunnyside Landscaping
+           </h4>
+           <p>
+            134 10 St NW
+            <br>
+            Calgary, AB T2N 1V3
+            <br>
+            <br>
+            403 283 3333
+            <br>
+            info@sunnysidelandscaping.com
+           </p>
+       </div>
+       <div id="sources">
+        <h4 class="formHeader2">
+            Images From:
+        </h4>
+
+        <p>
+        “BLOX RECTANGULAR GALVANIZED HI-GLOSS WHITE INDOOR/OUTDOOR PLANTERS.” CB2. <a href="https://www.cb2.ca/blox-rectangular-galvanized-hi-gloss-white-indoor-outdoor-planters/f13003"> https://www.cb2.ca/blox-rectangular-galvanized-hi-gloss-white-indoor-outdoor-planters/f13003 </a> (accessed Apr 3, 2022).
+        </p>
+
+        <p>
+        “SHORE POLYTERRAZZO INDOOR/OUTDOOR PLANTERSS.” CB2. <a href="https://www.cb2.ca/shore-polyterrazzo-indoor-outdoor-planters/f13066">https://www.cb2.ca/shore-polyterrazzo-indoor-outdoor-planters/f13066</a> (accessed Apr 3, 2022).
+        </p>
+
+        <p>
+        “SHORE POLYTERRAZZO WIDE BLACK INDOOR/OUTDOOR PLANTER.” CB2. <a href="https://www.cb2.ca/shore-polyterrazzo-wide-black-indoor-outdoor-planter/s271116">https://www.cb2.ca/shore-polyterrazzo-wide-black-indoor-outdoor-planter/s271116</a> (accessed Apr 3, 2022).
+        </p>
+
+        <p>
+        “ZEN LARGE WHITE INDOOR/OUTDOOR PLANTER.” CB2. <a href="https://www.cb2.ca/zen-large-white-indoor-outdoor-planter/s271531?st=zen%20planters">https://www.cb2.ca/zen-large-white-indoor-outdoor-planter/s271531?st=zen%20planters</a> (accessed Apr 3, 2022).
+        </p>
+
+        <p>
+        “SEMINYAK GREY INDOOR/OUTDOOR PLANTER 12.25".” CB2. <a href="https://www.cb2.ca/seminyak-grey-indoor-outdoor-planter-12.25/s220907">https://www.cb2.ca/seminyak-grey-indoor-outdoor-planter-12.25/s220907</a> (accessed Apr 3, 2022).
+        </p>
+
+       </div>
+    </footer>
+
+</body>
+
+</html>
